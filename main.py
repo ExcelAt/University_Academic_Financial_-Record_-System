@@ -8,7 +8,8 @@ from signUp import SignUpWindow
 from students import StudentRegistrationTab
 from courses import CourseManagementTab
 from studentPortal import StudentPortalTab
-
+from studentPortal import StudentPortalTab
+from reports import ReportsTab, WarningTab
 
 #creating admin dashboard for differnet access levels
 class AdminDashboard:
