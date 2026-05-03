@@ -2,11 +2,11 @@ import re
 import hashlib
 from datetime import datetime
 
-
+# password hashing for security
 def hash_password(password):
     return hashlib.sha256(password.encode()).hexdigest()
 
-
+# password validation for students registration 
 def validate_password(password):
     if len(password) < 8:
         return False, "Password must be at least 8 characters."
@@ -16,11 +16,11 @@ def validate_password(password):
         return False, "Password must contain at least one number."
     return True, None
 
-
+# email validation 
 def validate_email(email):
     return re.match(r"^[^\s@]+@[^\s@]+\.[^\s@]+$", email) is not None
 
-
+# date of birth validation for students registration
 def validate_dob(dob_str):
     try:
         dob = datetime.strptime(dob_str.strip(), "%d/%m/%Y")
@@ -37,6 +37,7 @@ def validate_dob(dob_str):
     return True, dob_str.strip()
 
 
+# fee validation for courses creation
 def validate_fee(fee_str):
     try:
         fee = float(fee_str.strip())
@@ -46,7 +47,7 @@ def validate_fee(fee_str):
         return False, "Course fee must be greater than zero."
     return True, round(fee, 2)
 
-
+#course duration validation 
 def validate_duration(duration_str):
     val = duration_str.strip()
     if not val:
