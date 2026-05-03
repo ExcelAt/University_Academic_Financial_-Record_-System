@@ -6,6 +6,7 @@ from datetime import datetime
 from database import get_connection, init_database
 from utils import (hash_password, validate_email,
                    validate_dob, validate_password)
+from reports import ReportsTab, WarningTab
 
 # Page setup 
 st.set_page_config(
